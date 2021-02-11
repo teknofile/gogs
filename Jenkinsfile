@@ -13,7 +13,7 @@ pipeline {
     TKF_REPO = 'gogs'
     DOCKERHUB_IMAGE = "${TKF_USER}" + "/" + "${TKF_REPO}"
 
-    GITHUB_URL = "https://github.com/" + ${TKF_USER} + "/" + ${TKF_REPO} + ".git"
+    GITHUB_URL = "https://github.com/" + "${TKF_USER}" + "/" + "${TKF_REPO}" + ".git"
   }
 
   stages {
