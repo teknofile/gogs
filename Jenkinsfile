@@ -20,7 +20,7 @@ pipeline {
     stage('Docker Build amd64') {
       steps {
         //git([url: 'https://github.com/teknofile/tkf-docker-openldap.git', branch: 'master', credentialsId: 'teknofile-github-user-token'])
-        git([url: ${GITHUB_URL}, branch: 'main', credentialsId: 'teknofile-github-user-token'])
+        git([url: "${GITHUB_URL}", branch: 'main', credentialsId: 'teknofile-github-user-token'])
         script {
           withDockerRegistry(credentialsId: 'teknofile-dockerhub') {
             sh '''
@@ -38,7 +38,7 @@ pipeline {
       }
       steps {
         //git([url: 'https://github.com/teknofile/tkf-docker-openldap.git', branch: 'master', credentialsId: 'teknofile-github-user-token'])
-        git([url: ${GITHUB_URL}, branch: 'main', credentialsId: 'teknofile-github-user-token'])
+        git([url: "${GITHUB_URL}", branch: 'main', credentialsId: 'teknofile-github-user-token'])
         script {
           withDockerRegistry(credentialsId: 'teknofile-dockerhub') {
             sh '''
